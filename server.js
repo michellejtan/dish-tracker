@@ -50,7 +50,7 @@ app.get('/vip-lounge', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use('/users/:userId/dishes', dishesauthController);
+app.use('/users/:userId/dishes', dishesController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
