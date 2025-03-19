@@ -14,9 +14,8 @@ const dishSchema = new mongoose.Schema({
     type: String
   },
   notes: {
-    type: [String],
-    default: []
-  },  // Array of comments
+    type: String,
+  }, 
   status: {
     type: String,
     enum: ['Tried', 'Want to Try'],
