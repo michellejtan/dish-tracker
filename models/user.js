@@ -13,7 +13,7 @@ const dishSchema = new mongoose.Schema({
   restaurantLocation: {
     type: String
   },
-  comments: {
+  notes: {
     type: [String],
     default: []
   },  // Array of comments
