@@ -33,4 +33,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+// GET /users/:userId/dishes/:dishId
+router.get('/:dishId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        res.locals.dishItem = currentUser.dishes.id(req.params.dishId);
+        res.render('dishes/show.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 module.exports = router;
