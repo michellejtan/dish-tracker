@@ -58,6 +58,33 @@ router.delete('/:dishId', async (req, res) => {
     }
 });
 
+// GET /users/:userId/dishes/:dishId/edit
+router.get('/:dishId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        res.locals.dishItem = currentUser.dishes.id(req.params.dishId);
+        res.render('dishes/edit.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
+// PUT /users/:userId/dishes/:dishId
+router.put('/:dishId', async (req, res) => {
+    try {
+      const currentUser = await User.findById(req.session.user._id);
+      const dishItem = currentUser.dishes.id(req.params.dishId);
+      dishItem.set(req.body);
+      await currentUser.save();
+      //Redirect back to the index view
+      res.redirect(
+        `/users/${currentUser._id}/dishes`
+      );
+    } catch (error) {
+      console.log(error);
+      res.redirect('/');
+    }
+});
 
 module.exports = router;
