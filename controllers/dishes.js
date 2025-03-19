@@ -45,4 +45,19 @@ router.get('/:dishId', async (req, res) => {
     }
 });
 
+// DELETE /users/:userId/dishes/:dishId
+router.delete('/:dishId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.dishes.id(req.params.dishId).deleteOne();
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/dishes`);
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
+
+
 module.exports = router;
