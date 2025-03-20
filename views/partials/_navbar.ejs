@@ -1,0 +1,23 @@
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <% if(user) { %>
+            <li>
+                <a href="/users/<%=user._id%>/dishes">Dishes Collection</a>
+            </li>
+            <li>
+                <a href="/users/<%=user._id%>/community">Explore Our Community</a>
+            </li>
+            <li class="auth-links">
+                <a href="/auth/sign-out" >Sign Out</a>
+            </li>
+        <% } else { %>
+            <li class="auth-links">
+                <a href="/auth/sign-in" class="auth-links">Sign In</a>
+                <a href="/auth/sign-up" class="auth-links">Sign Up</a>
+            </li>
+            <% } %>
+    </ul>
+</nav>
