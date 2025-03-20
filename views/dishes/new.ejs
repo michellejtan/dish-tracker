@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <title>Add Dish | DishNote</title>
+</head>
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_footer.ejs') %>
+
+      <!-- Add New Dish Form -->
+      <main class="form-container">
+        <h1>Add a New Dish</h1>
+        <form action="/users/<%= user._id %>/dishes" method="POST" class="dish-form">
+          <div class="form-group">
+            <label for="name">Dish Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="restaurantName">Restaurant Name:</label>
+            <input type="text" id="restaurantName" name="restaurantName" required>
+          </div>
+
+          <div class="form-group-new">
+            <label for="restaurantLocation">Restaurant Location:</label>
+            <input type="text" id="restaurantLocation" name="restaurantLocation">
+          </div>
+
+          <div class="form-group">
+            <label for="websiteLink"> Website Link (Optional):</label>
+            <input type="url" id="websiteLink" name="websiteLink">
+          </div>
+
+          <!-- Status Section with custom radio -->
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <div class="status-container">
+              <div class="radio-container">
+                <input type="radio" id="tried" name="status" value="Tried">
+                <label for="tried">Tried</label>
+              </div>
+
+              <div class="radio-container">
+                <input type="radio" id="wantToTry" name="status" value="Want to Try">
+                <label for="wantToTry">Want to Try</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+          </div>
+
+          <button type="submit">Add Dish</button>
+        </form>
+      </main>
+
+</body>
+
+</html>
