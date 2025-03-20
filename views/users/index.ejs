@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Community Page | DishNote</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_footer.ejs') %>
+
+        <h1>Explore Our Community</h1>
+
+
+        <% if (filteredUsers.length===0) { %>
+            <p>No other users found in the community.</p>
+            <% } else { %>
+                <ul>
+                    <% filteredUsers.forEach(user=> { %>
+                        <li>
+                            <!-- Display user's name and a link to their profile -->
+                            <a class="user-cards" href="/users/<%= user._id %>/community/<%= user.id %>/">
+                                <%= user.name %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
+</body>
+
+</html>
