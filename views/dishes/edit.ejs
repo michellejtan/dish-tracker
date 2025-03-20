@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <title>Editing <%= dishItem.name %> | DishNote
+  </title>
+</head>
+
+<body>
+
+  <%- include("../partials/_navbar.ejs") %>
+    <%- include("../partials/_footer.ejs") %>
+      <main>
+
+        <div class="form-container">
+          <h2>Edit <%= dishItem.name %>
+          </h2>
+          <form action="/users/<%= user._id %>/dishes/<%= dishItem._id %>?_method=PUT" method="POST"
+            enctype="multipart/form-data" class="dish-form">
+
+            <div class="form-group">
+              <label for="name">Dish Name</label>
+              <input type="text" id="name" name="name" value="<%= dishItem.name %>" required>
+            </div>
+
+            <div class="form-group">
+              <label for="restaurantName">Restaurant Name</label>
+              <input type="text" id="restaurantName" name="restaurantName" value="<%= dishItem.restaurantName %>"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="restaurantLocation">Restaurant Location</label>
+              <input type="text" id="restaurantLocation" name="restaurantLocation"
+                value="<%= dishItem.restaurantLocation %>">
+            </div>
+
+            <div class="form-group">
+              <label for="websiteLink">Website Link (Optional):</label>
+              <input type="url" id="websiteLink" name="websiteLink" value="<%= dishItem.websiteLink || '' %>">
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status:</label>
+              <div class="status-container">
+                <div class="radio-container">
+                  <!-- Checked if the dish status is 'Tried' -->
+                  <input type="radio" id="tried" name="status" value="Tried" <%=dishItem.status==='Tried' ? 'checked'
+                    : '' %> >
+                  <label for="tried">Tried</label>
+                </div>
+
+                <div class="radio-container">
+                  <!-- Checked if the dish status is 'Want to Try' -->
+                  <input type="radio" id="wantToTry" name="status" value="Want to Try"
+                    <%=dishItem.status==='Want to Try' ? 'checked' : '' %> >
+                  <label for="wantToTry">Want to Try</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Notes:</label>
+              <textarea id="notes" name="notes" rows="4"><%= dishItem.notes %></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="image">Dish Image</label>
+              <input type="file" id="image" name="image" accept="image/*">
+
+              <% if (dishItem.image) { %>
+                <div>
+                  <p>Current Image:</p>
+                  <img src="<%= dishItem.image %>" alt="Current dish image" style="max-width: 200px;">
+                </div>
+                <% } %>
+            </div>
+
+            <button type="submit">Update <%= dishItem.name %></button>
+          </form>
+        </div>
+      </main>
+
+</body>
+
+</html>
