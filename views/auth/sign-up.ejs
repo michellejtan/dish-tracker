@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <title>Sign Up | DishNote</title>
 </head>
+
 <body>
-  <h1>Create a new account!</h1>
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <button type="submit">Sign up</button>
-  </form>
+  <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_footer.ejs') %>
+      <main>
+        <div class="signin-container">
+          <h1>Create a new account!</h1>
+          <form action="/auth/sign-up" method="POST" class="dish-form">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required />
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required />
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required />
+            <button type="submit">Sign up</button>
+          </form>
+        </div>
+      </main>
 </body>
+
 </html>
