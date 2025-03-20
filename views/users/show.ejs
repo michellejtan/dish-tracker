@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>
+        <%= selectUser.name %>'s Dish Collection! | DishNote
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <%- include('../partials/_footer.ejs') %>
+        <main>
+            <h1> Welcome to <%= selectUser.username %>'s Dish Collection! </h1>
+
+            <h2>
+                <%= selectUser.username %>'s Dish Collection:
+            </h2>
+
+            <% if (selectUser.dishes && selectUser.dishes.length> 0) { %>
+                <ul>
+                    <% selectUser.dishes.forEach(item=> { %>
+                        <li>
+                            <%= item.name %>
+                                <div class="dish-cards">
+                                    <h1>
+                                        <%= item.name %>
+                                    </h1>
+
+                                    <h2>
+                                        <%= item.restaurantName %>
+                                    </h2>
+                                    <h2>
+                                        <a href="https://www.google.com/maps?q=<%= item.restaurantLocation %>"
+                                            target="_blank">
+                                            <%= item.restaurantLocation %>
+                                        </a>
+                                    </h2>
+                                    <h2>
+                                        <%= item.notes %>
+                                    </h2>
+                                    <h2>
+                                        <a href="<%= item.websiteLink %>" target="_blank">
+                                            <%= item.websiteLink %>
+                                        </a>
+                                    </h2>
+
+
+                                    <h2>
+                                        <% if(item.status==='Tried' ) { %>
+                                            <p>
+                                                <%= selectUser.name %> tried <%= item.name %> before!
+                                            </p>
+                                            <% } else { %>
+                                                <p>
+                                                    <%= selectUser.name %> want to try <%= item.name %>!
+                                                </p>
+                                                <% } %>
+                                    </h2>
+                                </div>
+                        </li> <!-- Assuming item has a 'name' property -->
+                        <% }) %>
+                </ul>
+                <% } else { %>
+                    <ul>
+                        <li>
+                            <p>No dish in this collection yet.</p>
+                        </li>
+
+                    </ul>
+                    <% } %>
+        </main>
+</body>
+
+</html>
