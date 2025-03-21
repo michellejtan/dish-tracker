@@ -49,6 +49,7 @@ Data Model:
 
 ## Next Steps
 * members can upload their dish picture
+* a search bar to search for information already existing in the database
 * able to "like"/ save other member's dish
 * able to add other member as "friend"/ following other members
 * message feature between members
