@@ -6,59 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <title><%= dishItem.name %> Detail Page | DineNote</title>
+    <title>
+        <%= dishItem.name %> Detail Page | DineNote
+    </title>
 </head>
 
 <body>
-    <!-- Navbar included -->
     <%- include('../partials/_navbar.ejs') %>
 
-    <!-- Main Content Area -->
-    <main>
-        <!-- Dish Details Box -->
-        <div class="dish-details">
-            <h1><%= dishItem.name %></h1>
-            <h2><%= dishItem.restaurantName %></h2>
+        <main>
+            <div class="dish-details">
+                <h1>
+                    <%= dishItem.name %>
+                </h1>
+                <h3>
+                    <%= dishItem.restaurantName %>
+                        <h3>
 
-            <!-- Location Link (opens in Google Maps) -->
-            <h2>
-                <a href="https://www.google.com/maps?q=<%= dishItem.restaurantLocation %>" target="_blank">
-                    <%= dishItem.restaurantLocation %>
+                            <h3>
+                                <a href="https://www.google.com/maps?q=<%= dishItem.restaurantLocation %>"
+                                    target="_blank">
+                                    <%= dishItem.restaurantLocation %>
+                                </a>
+                            </h3>
+
+                            <h3>
+                                <a href="<%= dishItem.websiteLink %>" target="_blank">
+                                    <%= dishItem.websiteLink %>
+                                </a>
+                            </h3>
+
+                            <h3>
+                                <%= dishItem.notes %>
+                            </h3>
+                            <h3>
+                                <% if(dishItem.status==='Tried' ) { %>
+                                    <p>I tried <%= dishItem.name %> before!</p>
+                                    <% } else { %>
+                                        <p>I want to try <%= dishItem.name %>!</p>
+                                        <% } %>
+                            </h3>
+            </div>
+
+            <div class="dish-actions">
+                <form class="delete-form" action="/users/<%= user._id %>/dishes/<%= dishItem._id %>?_method=DELETE"
+                    method="POST">
+                    <button class="delete-button" type="submit">❌Delete <%= dishItem.name %></button>
+                </form>
+
+                <a class="edit-link" href="/users/<%= user._id %>/dishes/<%= dishItem._id %>/edit">
+                    <div class="edit-text">Edit <%= dishItem.name %>
+                    </div>
                 </a>
-            </h2>
+            </div>
+        </main>
 
-            <!-- Website Link (opens in new window) -->
-            <h2>
-                <a href="<%= dishItem.websiteLink %>" target="_blank">
-                    <%= dishItem.websiteLink %>
-                </a>
-            </h2>
-
-            <h2><%= dishItem.notes %></h2>
-            <h2>
-                <% if(dishItem.status === 'Tried') { %>
-                    <p>I tried <%= dishItem.name %> before!</p>
-                <% } else { %>
-                    <p>I want to try <%= dishItem.name %>!</p>
-                <% } %>
-            </h2>
-        </div>
-
-        <!-- Dish Actions (Edit and Delete buttons outside dish details) -->
-        <div class="dish-actions">
-            <form class="delete-form" action="/users/<%= user._id %>/dishes/<%= dishItem._id %>?_method=DELETE" method="POST">
-                <button class="delete-button" type="submit">Delete <%= dishItem.name %></button>
-            </form>
-
-            <!-- Edit Button -->
-            <a class="edit-link" href="/users/<%= user._id %>/dishes/<%= dishItem._id %>/edit">
-                <div class="edit-text">Edit <%= dishItem.name %></div>
-            </a>
-        </div>
-    </main>
-
-    <!-- Footer included -->
-    <%- include('../partials/_footer.ejs') %>
+        <%- include('../partials/_footer.ejs') %>
 </body>
 
 </html>
