@@ -73,17 +73,17 @@ router.get('/:dishId/edit', async (req, res) => {
 // PUT /users/:userId/dishes/:dishId
 router.put('/:dishId', async (req, res) => {
     try {
-      const currentUser = await User.findById(req.session.user._id);
-      const dishItem = currentUser.dishes.id(req.params.dishId);
-      dishItem.set(req.body);
-      await currentUser.save();
-      //Redirect back to the index view
-      res.redirect(
-        `/users/${currentUser._id}/dishes`
-      );
+        const currentUser = await User.findById(req.session.user._id);
+        const dishItem = currentUser.dishes.id(req.params.dishId);
+        dishItem.set(req.body);
+        console.log(dishItem);
+        await currentUser.save();
+        res.redirect(
+            `/users/${currentUser._id}/dishes`
+        );
     } catch (error) {
-      console.log(error);
-      res.redirect('/');
+        console.log(error);
+        res.redirect('/');
     }
 });
 
