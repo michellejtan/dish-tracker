@@ -17,8 +17,8 @@
       <main>
 
         <div class="form-container">
-          <h2>Edit <%= dishItem.name %>
-          </h2>
+          <h1>Edit <%= dishItem.name %>
+          </h1>
           <form action="/users/<%= user._id %>/dishes/<%= dishItem._id %>?_method=PUT" method="POST" class="dish-form">
 
             <div class="form-group">
@@ -47,14 +47,12 @@
               <label for="status">Status:</label>
               <div class="status-container">
                 <div class="radio-container">
-                  <!-- Checked if the dish status is 'Tried' -->
                   <input type="radio" id="tried" name="status" value="Tried" <%=dishItem.status==='Tried' ? 'checked'
                     : '' %> >
                   <label for="tried">Tried</label>
                 </div>
 
                 <div class="radio-container">
-                  <!-- Checked if the dish status is 'Want to Try' -->
                   <input type="radio" id="wantToTry" name="status" value="Want to Try"
                     <%=dishItem.status==='Want to Try' ? 'checked' : '' %> >
                   <label for="wantToTry">Want to Try</label>
