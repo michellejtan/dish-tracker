@@ -12,10 +12,9 @@
 
 <body>
   <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_footer.ejs') %>
 
       <main>
-        <div class="signin-container">
+        <div class="sign-container">
           <h1>Sign in</h1>
           <form action="/auth/sign-in" method="POST" class="dish-form">
             <div class="form-group">
@@ -30,6 +29,7 @@
 
         </div>
       </main>
+      <%- include('../partials/_footer.ejs') %>
 
 </body>
 
