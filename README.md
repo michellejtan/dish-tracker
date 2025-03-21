@@ -48,6 +48,7 @@ Data Model:
 - favicon from [favicon.io/](https://favicon.io/)
 
 ## Next Steps
+* members can upload their dish picture
 * able to "like"/ save other member's dish
 * able to add other member as "friend"/ following other members
 * message feature between members
