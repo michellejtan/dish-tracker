@@ -16,14 +16,29 @@
         <div class="sign-container">
           <h1>Create a new account!</h1>
           <form action="/auth/sign-up" method="POST" class="dish-form">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required />
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" required />
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required />
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" required />
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" id="username" required />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" required />
+            </div>
+
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password:</label>
+              <input type="password" name="confirmPassword" id="confirmPassword" required />
+            </div>
+
+
+            <label>Already have an account? <a href="/auth/sign-in"> Sign in</a></label>
             <button type="submit">Sign up</button>
           </form>
         </div>
