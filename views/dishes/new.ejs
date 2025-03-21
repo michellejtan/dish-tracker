@@ -15,8 +15,6 @@
     <%- include('../partials/_footer.ejs') %>
       <main>
 
-
-        <!-- Add New Dish Form -->
         <div class="form-container">
           <h1>Add a New Dish</h1>
           <form action="/users/<%= user._id %>/dishes" method="POST" class="dish-form">
@@ -60,7 +58,7 @@
               <textarea id="notes" name="notes" rows="4"></textarea>
             </div>
 
-            <button class="button-container" type="submit">Add Dish</button>
+            <button type="submit">Add Dish</button>
           </form>
           <div>
       </main>
