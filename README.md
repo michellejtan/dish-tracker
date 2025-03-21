@@ -1,5 +1,5 @@
 # 🍽 DishNote
-DineNote is a dish tracking app that let everyone log, explore, and share their culinary experiences. Discover new dishes from other users' lists and get inspired by their food journeys.
+DishNote is a dish tracking app that let everyone log, explore, and share their culinary experiences. Discover new dishes from other users' lists and get inspired by their food journeys.
 
 [DishNote Deployment here!](https://dish-tracker-56e951c2fd28.herokuapp.com/)
 
