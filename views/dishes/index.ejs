@@ -11,35 +11,31 @@
 </head>
 
 <body>
-    <div class="background">
-        <%- include('../partials/_navbar.ejs') %>
+
+
+    <%- include('../partials/_navbar.ejs') %>
         <%- include('../partials/_footer.ejs') %>
+            <main>
+                <h1 class="blur">Welcome to my Dishes Collection</h1>
 
-            <div class="blur">
-                <h1>Welcome to my Dishes Collection</h1>
-            </div>
-            <a class="add-dish" href="/users/<%=user._id %>/dishes/new">Add a Dish</a>
-            <ul>
-                <% if (dishes.length===0) { %>
-                    <p>There are no items in this collection.</p>
-                    <% } else { %>
+                <a class="add-dish" href="/users/<%=user._id %>/dishes/new">Add a Dish</a>
+                <ul class="contain-cards">
+                    <% if (dishes.length===0) { %>
+                        <p>There are no items in this collection.</p>
+                        <% } else { %>
 
-                        <% dishes.forEach((item)=>{ %>
-                            <li>
-                                <a href="/users/<%= user._id %>/dishes/<%= item._id %>/">
-                                    <%= item.name %>
-                                </a>
+                            <% dishes.forEach((item)=>{ %>
+                                <li>
+                                    <a class="user-cards" href="/users/<%= user._id %>/dishes/<%= item._id %>/">
+                                        <%= item.name %>
+                                    </a>
 
+                                </li>
+                                <% }); %>
+                </ul>
+                <% } %>
+            </main>
 
-                                <a href="/users/<%= user._id %>/dishes/<%= item._id %>/edit">
-                                    Edit <%= item.name %>
-                                </a>
-                               
-                            </li>
-                            <% }); %>
-            </ul>
-            <% } %>
-                <div>
 </body>
 
 </html>
