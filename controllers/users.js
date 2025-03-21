@@ -8,9 +8,8 @@ router.get('/', async (req, res) => {
     try {
         const allUsers = await User.find();
         const currentUser = await User.findById(req.session.user._id);
-    
+
         const filteredUsers = allUsers.filter(user => user._id.toString() !== currentUser._id.toString());
-        console.log("filteredUsers: " + filteredUsers);
 
         res.render('users/index.ejs', {
             allUsers,

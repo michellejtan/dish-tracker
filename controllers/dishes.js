@@ -76,7 +76,6 @@ router.put('/:dishId', async (req, res) => {
         const currentUser = await User.findById(req.session.user._id);
         const dishItem = currentUser.dishes.id(req.params.dishId);
         dishItem.set(req.body);
-        console.log(dishItem);
         await currentUser.save();
         res.redirect(
             `/users/${currentUser._id}/dishes`
