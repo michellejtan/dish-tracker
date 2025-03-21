@@ -11,27 +11,30 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_footer.ejs') %>
-<main>
+        <%- include('../partials/_footer.ejs') %>
+            <main>
 
-    <h1>Explore Our Community</h1>
+                <h1>Explore Our Community</h1>
 
 
-    <% if (filteredUsers.length===0) { %>
-        <p>No other users found in the community.</p>
-        <% } else { %>
-            <ul class="contain-cards">
-                <% filteredUsers.forEach(user=> { %>
-                    <li >
-                        <!-- Display user's name and a link to their profile -->
-                        <a class="user-cards" href="/users/<%= user._id %>/community/<%= user.id %>/">
-                            <%= user.name %>
-                        </a>
-                    </li>
-                    <% }) %>
-            </ul>
-            <% } %>
-</main>
+                <% if (filteredUsers.length===0) { %>
+                    <p>No other users found in the community.</p>
+                    <% } else { %>
+                        <h3>MEMBERS</h3>
+                        <ul class="contain-cards">
+
+                            <% filteredUsers.forEach(user=> { %>
+
+                                <li>
+                                    <a class="user-cards" href="/users/<%= user._id %>/community/<%= user.id %>/">
+                                        <%= user.name %>
+                                    </a>
+                                </li>
+                                <% }) %>
+                        </ul>
+                        <% } %>
+
+            </main>
 </body>
 
 </html>
