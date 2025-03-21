@@ -27,27 +27,24 @@ body {
   background-size: cover;
   font-family: 'Arial', sans-serif;
   margin: 0;
-
   padding: 0;
   color: #333;
-  /* color: #c49475; */
   line-height: 1.6;
-
-  /* height: 100vh; */
-  /* min-height: 100vh; */
 }
 
-
-
-h3 {
-  color: #7e5c48;
+.intro {
   background-color: #ccc;
+  padding: 20px;
+}
+
+.intr h3 {
+  color: #7e5c48;
   opacity: .9;
   font-weight: 900;
 }
 
 h1 {
-  backdrop-filter: blur(10px) saturate(70%);
+  /* backdrop-filter: blur(10px) saturate(70%); */
   text-align: center;
   color: #7e5c48;
   font-weight: 900;
@@ -102,12 +99,11 @@ nav {
   right: 0;
   left: 0;
   z-index: 1000;
-  /* Ensures navbar stays above other content */
-  /* align-items: center; */
 }
 
 li {
   list-style-type: none;
+  text-align: center;
 }
 
 nav ul {
@@ -115,38 +111,11 @@ nav ul {
   margin: 0;
   padding: 0;
   gap: 20px;
-  /* Flex gap for spacing between list items */
-
   width: 100%;
-  /* justify-content: flex-start; */
-  /* Ensure the ul takes up full width */
-}
-
-/* Grouped Auth Links: Align these to the right */
-nav ul li.auth-links {
-  margin-left: auto;
-  /* This pushes the auth links to the far right */
-  display: flex;
-  /* Make these links display side-by-side */
-  gap: 5px;
-  /* Space between Sign In and Sign Up */
 }
 
 nav ul li {
   margin: 0 20px;
-}
-
-a {
-  /* Light gray color for links */
-  color: #009688;
-  /* color: #f1f1f1; */
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  /* Medium weight for better readability */
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
 }
 
 nav a {
@@ -154,7 +123,6 @@ nav a {
   color: white;
   font-size: 18px;
   padding: 10px 15px;
-  /* display: block; */
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -162,45 +130,15 @@ nav a {
 nav a:hover {
   background-color: #4CAF50;
   transform: scale(1.05);
-  /* background-color: #007bff;  */
-  /* Blue background on hover/focus */
-  /* color: #ffffff;  */
-  /* White text on hover */
-  /* transform: translateY(-2px);  */
-  /* Slight upward movement on hover for a modern feel */
 }
 
-nav a.active {
-  background-color: #45a049;
-  color: white;
-  font-weight: bold;
-}
-
-/* Auth Links: Align these to the right */
 .auth-links {
   margin-left: auto;
-  /* Push to the right */
   display: flex;
 }
 
 .auth-links li {
   margin-left: 10px;
-  /* Spacing between the links */
-}
-
-.auth-links a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.auth-links a:hover {
-  background-color: #4CAF50;
-  transform: scale(1.05);
 }
 
 .add-dish {
@@ -217,18 +155,9 @@ nav a.active {
   padding: 10px;
   font-weight: bold;
   font-size: 1.2em;
+  text-align: center;
 }
 
-/* Main Content Area */
-/* .main-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-} */
-
-/* Form Styling */
 .form-container,
 .sign-container {
   max-width: 800px;
@@ -238,97 +167,42 @@ nav a.active {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-top: 5px solid #4CAF50;
-
   outline: 3px solid #4CAF50;
-  /* Outline color of the form */
-  /* outline-offset: 4px;  */
-  /* Optional: space between the form's border and outline */
-  /* max-height: 100%; */
-  /* Ensures form doesn't exceed its container's height */
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
-
-
 }
 
 
 .dish-details {
-
-  /* max-width: 800px;
-  margin: 30px auto;
-  padding: 25px;
-  background-color: white;
-  
- 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-top: 5px solid #4CAF50; */
-
-  /* opacity: 0.9; */
-  /* min-height: 100px; */
   border-radius: 33px;
   background-color: rgba(255, 255, 255, 0.7);
-  /* Transparent background */
-  border: 3px solid transparent;
-  /* border-radius: 10px; */
-  /* background-clip: padding-box; */
+  border: 3px solid black;
   padding: 20px;
   margin: 20px auto;
-  /* border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1; */
-  /* border-image-slice: 1; */
   width: 100%;
-  /*Make it responsive*/
   max-width: 600px;
-  /* Limit the width to a max size */
-  /* box-sizing: border-box; */
-  /* z-index: -1; */
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7);
-  /* Glowing effect */
   box-shadow: 0 0 15px 5px pink;
-
+  text-align: center;
 }
 
 
 .dish-details a {
-  /* color: blue; */
   color: black;
   font-weight: bold;
   text-decoration: underline;
 }
 
-/* .blur{
-  background: inherit;
-
-  filter: blur(4px);
-} */
-
+.blur {
+  backdrop-filter: blur(10px) saturate(70%);
+}
 
 .dish-form {
   display: flex;
   flex-direction: column;
-
   gap: 15px;
-  /* max-height: none; */
-  /* Ensure the form doesn't have a restrictive height */
-  /* overflow-y: auto; */
-  /* align-items: flex-start; */
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  /* Centers the button horizontally */
-  align-items: center;
-  /* Centers the button vertically if needed (adjust based on layout) */
-  margin-top: 20px;
-  /* Optional: add space between content and button */
-  /* width: 100%; */
 }
 
 .form-group {
-  /* gap: 5px; */
-  /* display: flex;
-  flex-direction: column; */
   margin-bottom: 15px;
 }
 
@@ -336,18 +210,14 @@ nav a.active {
   flex-direction: row;
 }
 
-/* KEEP */
 .contain-cards {
   display: flex;
-  /* Use flexbox for the layout */
   flex-wrap: wrap;
-  /* Allow the items to wrap to the next line */
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* KEEP */
 .user-cards {
   display: flex;
   flex-direction: column;
@@ -364,65 +234,44 @@ nav a.active {
   border: 2.5px solid #5789a8;
 }
 
-/* KEEP */
 .dish-cards-container {
   display: flex;
   flex-wrap: wrap;
-  /* Allow wrapping to the next line */
   justify-content: space-around;
-  /* Distribute the cards evenly */
   gap: 20px;
-  /* Add spacing between the cards */
   padding: 20px;
-  /* Add some padding around the container */
 }
 
-/* KEEP */
 .dish-card {
   flex: 1 1 280px;
-  /* Make each card flexible, with a base width of 280px */
   max-width: 320px;
-  /* Limit max width to 320px for bigger screens */
   background-color: #fff;
-  /* Card background color */
   border-radius: 10px;
-  /* Rounded corners for the card */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  /* Soft shadow for a floating effect */
   padding: 20px;
-  /* Padding inside the card */
   display: flex;
   flex-direction: column;
-  /* Stack elements vertically */
   gap: 10px;
-  /* Space between elements inside the card */
   text-align: center;
-  /* Center the text inside the card */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Smooth hover effect */
 }
 
-/* Hover effect for the cards */
+.user-cards:hover,
 .dish-card:hover {
   transform: translateY(-5px);
-  /* Lift the card slightly on hover */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* Increase shadow effect on hover */
 }
 
 label {
   font-size: 16px;
-  /* margin-bottom: 5px; */
   font-weight: 600;
-  /* padding: 1px; */
-  /* gap: 5px; */
 }
+
 
 input[type="text"],
 input[type="url"],
 input[type="password"],
 textarea {
-  /* padding: 8px; */
   font-size: 16px;
   width: 100%;
   border: 1px solid #ccc;
@@ -432,21 +281,12 @@ textarea {
   transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="url"]:focus,
-input[type="password"],
-textarea:focus {
-  border-color: #4CAF50;
-  outline: none;
-}
-
 textarea {
   resize: vertical;
 }
 
 button {
   align-self: center;
-
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
@@ -479,7 +319,6 @@ button:focus {
   text-transform: uppercase;
 }
 
-/* Status Section */
 .status-container {
   display: flex;
   gap: 20px;
@@ -490,14 +329,11 @@ button:focus {
   display: flex;
   align-items: center;
   position: relative;
-  /* Ensures the radio buttons are positioned normally */
   z-index: 1;
 }
 
-/* radio */
 input[type="radio"] {
   display: none;
-  /* Hide the default radio button */
 }
 
 input[type="radio"]+label {
@@ -547,101 +383,15 @@ input[type="radio"]:hover+label::before {
   border-color: #4CAF50;
 }
 
-/* Optional: Styling for the file input */
-input[type="file"] {
-  margin-top: 10px;
-  padding: 6px;
-  font-size: 14px;
-  border: 2.5px solid #ccc;
-  border-radius: 4px;
-}
-
-
-input[type="file"]:hover {
-  border-color: #4CAF50;
-}
-
-/* checkbox */
-/* .checkbox-container input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-container label {
-  position: relative;
-  padding-left: 35px;
-  font-size: 16px;
-  cursor: pointer;
-  user-select: none;
-} */
-
-/* .checkbox-container label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #333;
-  border-radius: 4px;
-  background-color: white;
-  transition: background-color 0.3s, border-color 0.3s;
-} */
-
-/* Hover effect on the checkbox */
-/* .checkbox-container label:hover::before {
-  background-color: #f1f1f1;
-} */
-
-/* When checkbox is checked */
-/* .checkbox-container input[type="checkbox"]:checked+label::before {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
-  content: "\2713";
-  /* Unicode checkmark */
-/* color: white;
-  text-align: center;
-  line-height: 20px;
-} */
-
-/* .checkbox-container input[type="checkbox"]:checked+label:hover::before {
-  background-color: #45a049;
-}  */
-
-/* Footer Styling */
-/* footer {
-  font-size: 0.7em;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-} */
-
-/* footer a {
-  text-decoration: none;
-  color: #4CAF50;
-}
-
-footer a:hover {
-  color: #45a049;
-  text-decoration: underline;
-} */
-
-
-/* ////////////////////////// */
-/* Styling show.ejs */
 h2 {
   display: flex;
   justify-content: center;
-
 }
 
 .dish-actions {
   display: flex;
   flex-direction: row;
+  max-width: 600px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -653,20 +403,24 @@ h2 {
   padding: 0;
   box-shadow: 0 0;
   background-color: transparent;
-  height: 50px;
   margin: 0 20px 0 0;
-  min-height: 100%;
 }
 
 .delete-button {
-  background-color: #f47b5b;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 50%;
+  min-width: 80px;
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: 5px solid black;
+  color: black;
   text-transform: uppercase;
+  border-radius: 50%;
   padding: 40px 15px;
-  width: 70%;
-  /* height: 100%; */
   font-size: 1.3em;
-  margin: 0;
-  min-height: 100%;
+  line-height: 1.5;
 }
 
 .edit-link {
@@ -674,7 +428,8 @@ h2 {
 }
 
 .edit-text {
-  background-color: #3f6a51;
+  outline: 5px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   padding: 40px 15px;
   font-size: 1.3em;
@@ -682,15 +437,15 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   font-weight: bold;
   text-align: center;
-  width: 70%;
+  width: 100%;
   height: 50px;
 }
 
 .delete-button:hover {
-  background-color: #ffbd59;
+  background-color: #df7a72;
 }
 
 .delete-button:active {
@@ -698,10 +453,9 @@ h2 {
 }
 
 .edit-text:hover {
-  background-color: #769642;
+  background-color: #dffdff;
 }
 
 .edit-text:active {
-  background-color: #2d4d3a;
   background-color: rgb(217, 108, 78);
 }
