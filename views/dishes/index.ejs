@@ -18,7 +18,7 @@
             <div class="blur">
                 <h1>Welcome to my Dishes Collection</h1>
             </div>
-            <a href="/users/<%=user._id %>/dishes/new">Add a Dish</a>
+            <a class="add-dish" href="/users/<%=user._id %>/dishes/new">Add a Dish</a>
             <ul>
                 <% if (dishes.length===0) { %>
                     <p>There are no items in this collection.</p>
@@ -34,9 +34,7 @@
                                 <a href="/users/<%= user._id %>/dishes/<%= item._id %>/edit">
                                     Edit <%= item.name %>
                                 </a>
-                                <!-- <form action="/users/<%= user._id %>/dishes/<%= item._id %>?_method=DELETE"
-                                    method="POST">
-                                    <button type="submit">Delete <%= item.name %></button> -->
+                               
                             </li>
                             <% }); %>
             </ul>
